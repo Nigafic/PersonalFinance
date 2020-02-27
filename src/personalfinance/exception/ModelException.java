@@ -1,6 +1,6 @@
 package personalfinance.exception;
 
-public class ModelException {
+public class ModelException extends Exception {
 
     private final int code;
 

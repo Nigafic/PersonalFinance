@@ -6,6 +6,9 @@ abstract public class Common {
         return null;
     }
 
+    //требуется для механизма сохранения
+    public Common(){}
+
     public void postAdd() {
 
     }
