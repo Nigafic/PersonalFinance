@@ -1,6 +1,6 @@
 package personalfinance.model;
 
-import saveload.SaveData;
+import personalfinance.saveload.SaveData;
 
 import java.util.HashMap;
 import java.util.List;

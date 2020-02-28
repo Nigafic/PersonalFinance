@@ -1,4 +1,4 @@
-package saveload;
+package personalfinance.saveload;
 
 import personalfinance.model.*;
 
