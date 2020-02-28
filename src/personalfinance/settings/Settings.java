@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.Locale;
 import java.util.prefs.Preferences;
 
-public class Settings {
+final public class Settings {
 
     public static final File FONT_ROBOTO_LIGHT = new File("fonts/Roboto-Light.ttf");
     public static final File SAVE_DIR = new File("saves/");
