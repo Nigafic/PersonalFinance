@@ -7,7 +7,7 @@ import java.text.DateFormatSymbols;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Format {
+final public class Format {
 
     //формат числа (15.00)
     public static String amount(double amount) {
