@@ -1,5 +1,6 @@
 package personalfinance.saveload;
 
+import personalfinance.exception.ModelException;
 import personalfinance.model.*;
 
 import java.util.ArrayList;
@@ -116,4 +117,78 @@ final public class SaveData {
        return new Currency();
    }
 
+   public ArrayList<Currency> getEnableCurrencies (){
+        ArrayList<Currency> list = new ArrayList<>();
+        for (Currency c : currencies) {
+            if (c.isOn()) list.add(c);
+        }
+        return  list;
+   }
+
+   public List<Transaction> getFilterTransactions() {
+        ArrayList<Transaction> list = new ArrayList<>();
+        for (Transaction t : transactions)
+            if(filter.check(t.getDate())) list.add(t);
+            return  list;
+   }
+
+   public List<Transfer> getFilterTransfers() {
+        ArrayList<Transfer> list = new ArrayList<>();
+        for (Transfer t : transfers)
+            if(filter.check(t.getDate())) list.add(t);
+            return  list;
+   }
+
+    public List<Transaction> getTransactionsOnCount(int count) {
+       return new ArrayList(transactions.subList(0,Math.min(count, transactions.size())));
+    }
+
+    public Common getOldCommon() {
+        return oldCommon;
+    }
+
+    public void add (Common c) throws ModelException {
+        List ref = getRef(c);
+        if(ref.contains(c))throw new ModelException(ModelException.IS_EXISTS);
+        ref.add(c);
+        c.postAdd(this);
+        sort();
+        saved = false;
+    }
+
+    public void edit ( Common oldC, Common newC) throws ModelException {
+        List ref = getRef(oldC);
+        if(ref.contains(newC) && oldC!= ref.get(ref.indexOf(newC))) throw new ModelException(ModelException.IS_EXISTS);
+        ref.set(ref.indexOf(oldC), newC);
+        oldCommon = oldC;
+        newC.postEdit(this);
+        sort();
+        saved = false;
+    }
+
+    public void remove(Common c ){
+        getRef(c).remove(c);
+        c.postRemove(this);
+        saved = false;
+    }
+
+    private List getRef(Common c) {
+        if (c instanceof Article) return articles;
+        else if (c instanceof Account) return accounts;
+        else if (c instanceof Transaction) return transactions;
+        else if (c instanceof Transfer) return transfers;
+        else if (c instanceof Currency) return currencies;
+        return null;
+    }
+
+    @Override
+    public String toString() {
+        return "SaveData{" +
+                "articles=" + articles +
+                ", accounts=" + accounts +
+                ", currencies=" + currencies +
+                ", transactions=" + transactions +
+                ", transfers=" + transfers +
+                '}';
+    }
 }

@@ -1,5 +1,7 @@
 package personalfinance.model;
 
+import personalfinance.saveload.SaveData;
+
 abstract public class Common {
 
     public String getValueForCombobox(){
@@ -9,15 +11,15 @@ abstract public class Common {
     //требуется для механизма сохранения
     public Common(){}
 
-    public void postAdd() {
+    public void postAdd(SaveData sd ) {
 
     }
 
-    public void postEdit(){
+    public void postEdit(SaveData sd ){
 
     }
 
-    public void postRemove(){
+    public void postRemove(SaveData sd ){
 
     }
 
