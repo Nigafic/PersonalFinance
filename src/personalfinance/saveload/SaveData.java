@@ -3,9 +3,10 @@ package personalfinance.saveload;
 import personalfinance.model.*;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
-public class SaveData {
+final public class SaveData {
 
     private static SaveData instance ;
 
@@ -15,7 +16,50 @@ public class SaveData {
     private List<Transaction> transactions = new ArrayList<>();
     private List<Transfer> transfers = new ArrayList<>();
 
+    private final Filter filter ;
+    private Common oldCommon;
+    private boolean saved = true;
+
     public SaveData () {
+        load();
+        this.filter = new Filter();
+    }
+
+    private void load() {
+        SaveLoad.load(this);
+        sort();
+    }
+
+    private void sort() {
+        this.articles.sort((Article a, Article a1)->(a.getTitle().compareToIgnoreCase(a1.getTitle())));
+        this.accounts.sort((Account a, Account a1)->(a.getTitle().compareToIgnoreCase(a1.getTitle())));
+        this.transactions.sort((Transaction t, Transaction t1)->(int) t1.getDate().compareTo(t.getDate()));
+        this.transfers.sort((Transfer t, Transfer t1)->(int) t1.getDate().compareTo(t.getDate()));
+        this.currencies.sort(new Comparator<Currency>() {
+            @Override
+            public int compare(Currency c, Currency c1) {
+                if (c.isBase()) return -1;
+                if(c1.isBase()) return 1;
+                if (c.isOn()^ c1.isOn()){
+                    if (c1.isOn()) return 1;
+                    else return -1;
+                }
+                return c.getTitle().compareToIgnoreCase(c1.getTitle());
+            }
+        });
+    }
+
+    public void save() {
+        SaveLoad.save(this);
+        saved = true;
+    }
+
+    public boolean isSaved() {
+        return saved;
+    }
+
+    public Filter getFilter() {
+        return filter;
     }
 
     public static SaveData getInstance() {

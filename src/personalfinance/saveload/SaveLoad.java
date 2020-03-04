@@ -9,7 +9,7 @@ import javax.xml.bind.Unmarshaller;
 
 public class SaveLoad {
 
-    public void load (SaveData sd ) {
+    public static void load (SaveData sd ) {
         try {
             JAXBContext context = JAXBContext.newInstance(Wrapper.class);
             Unmarshaller um = context.createUnmarshaller();
@@ -20,11 +20,11 @@ public class SaveLoad {
             sd.setTransfers(wrapper.getTransfers());
             sd.setCurrencies(wrapper.getCurrencies());
         } catch (JAXBException e) {
-            e.printStackTrace();
+            System.out.println("File not found!");
         }
     }
 
-    public void save(SaveData sd) {
+    public static void save(SaveData sd) {
 
         try {
             JAXBContext context = JAXBContext.newInstance(Wrapper.class);
