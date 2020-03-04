@@ -86,6 +86,16 @@ public class Account extends Common {
     }
 
     @Override
+    public String toString() {
+        return "Account{" +
+                "title='" + title + '\'' +
+                ", currency=" + currency +
+                ", startAmount=" + startAmount +
+                ", amount=" + amount +
+                '}';
+    }
+
+    @Override
     public void postAdd(SaveData sd) {
         setAmountFromTransactionsAndTransfers(sd.getTransactions(), sd.getTransfers());
     }
