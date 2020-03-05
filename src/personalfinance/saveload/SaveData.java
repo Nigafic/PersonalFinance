@@ -1,10 +1,14 @@
 package personalfinance.saveload;
 
+import org.xml.sax.SAXException;
 import personalfinance.exception.ModelException;
 import personalfinance.model.*;
 
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 
 final public class SaveData {
@@ -190,5 +194,14 @@ final public class SaveData {
                 ", transactions=" + transactions +
                 ", transfers=" + transfers +
                 '}';
+    }
+
+    public void updateCurrency () throws IOException, SAXException, ParserConfigurationException {
+        HashMap<String, Double> rates = RateCurrency.getRates(getBaseCurrency());
+        for (Currency c: currencies){
+            c.setRate(rates.get(c.getCode()));
+        }
+        for (Account a: accounts)
+            a.getCurrency().setRate(rates.get(a.getCurrency().getCode()));
     }
 }

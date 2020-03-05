@@ -1,11 +1,13 @@
 package personalfinance;
 
+import org.xml.sax.SAXException;
 import personalfinance.exception.ModelException;
 import personalfinance.model.*;
 import personalfinance.saveload.SaveData;
 import personalfinance.settings.Settings;
 import personalfinance.settings.Text;
 
+import javax.xml.parsers.ParserConfigurationException;
 import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,11 +15,12 @@ import java.util.Date;
 
 public class PersonalFinance {
 
-    public static void main(String[] args) throws ModelException {
+    public static void main(String[] args) throws ModelException, ParserConfigurationException, SAXException, IOException {
         init();
         SaveData sd = SaveData.getInstance();
-        System.out.println(sd);
-       //testModel();
+        sd.updateCurrency();
+        System.out.println(sd.getCurrencies());
+        //testModel();
         //System.out.println(Format.dateMonth(new Date()));
 //        System.out.println(Text.get("PROGRAMM_NAME"));
 //        System.out.println(Arrays.toString(Text.getMonths()));
@@ -36,7 +39,7 @@ public class PersonalFinance {
 
     }
 
-    private static void testModel()  throws ModelException {
+    private static void testModel() throws ModelException {
         Currency c1 = new Currency("Рубль", "RUB", (double) 1, true, true);
         Currency c2 = new Currency("Доллар", "USD", (double) 65, true, false);
         Currency c3 = new Currency("Евро", "EUR", (double) 75, false, false);
