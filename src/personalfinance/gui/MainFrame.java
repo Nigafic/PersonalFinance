@@ -6,17 +6,17 @@ import personalfinance.settings.Text;
 import javax.swing.*;
 import java.awt.*;
 
-public class MainFrame extends JFrame {
+public class MainFrame extends JFrame implements Refresh {
 
     private GridBagConstraints constraints;
 
     public MainFrame() {
 
-
         super(Text.get("PROGRAMM_NAME"));
         setResizable(false);
         setIconImage(Style.ICON_MAIN.getImage());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new GridBagLayout());
 
         constraints = new GridBagConstraints();
 
@@ -33,9 +33,13 @@ public class MainFrame extends JFrame {
 
 
 
-        setLayout(new GridBagLayout());
-
-
+        pack();
         setLocationRelativeTo(null);
+    }
+
+    @Override
+    public void refresh() {
+        SwingUtilities.updateComponentTreeUI(this); //перересовка Фрейма
+        pack();
     }
 }
