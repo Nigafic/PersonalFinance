@@ -2,6 +2,7 @@ package personalfinance;
 
 import org.xml.sax.SAXException;
 import personalfinance.exception.ModelException;
+import personalfinance.gui.MainFrame;
 import personalfinance.model.*;
 import personalfinance.saveload.SaveData;
 import personalfinance.settings.Settings;
@@ -17,9 +18,12 @@ public class PersonalFinance {
 
     public static void main(String[] args) throws ModelException, ParserConfigurationException, SAXException, IOException {
         init();
+        Frame frame = new MainFrame();
+        frame.setVisible(true);
         SaveData sd = SaveData.getInstance();
-        sd.updateCurrency();
-        System.out.println(sd.getCurrencies());
+        //sd.updateCurrency();
+        sd.save();
+        System.out.println(sd);
         //testModel();
         //System.out.println(Format.dateMonth(new Date()));
 //        System.out.println(Text.get("PROGRAMM_NAME"));
