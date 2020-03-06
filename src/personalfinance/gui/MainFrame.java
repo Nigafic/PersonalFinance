@@ -1,5 +1,6 @@
 package personalfinance.gui;
 
+import personalfinance.gui.menu.MainMenu;
 import personalfinance.settings.Style;
 import personalfinance.settings.Text;
 
@@ -9,6 +10,7 @@ import java.awt.*;
 public class MainFrame extends JFrame implements Refresh {
 
     private GridBagConstraints constraints;
+    private final MainMenu mb;
 
     public MainFrame() {
 
@@ -17,6 +19,9 @@ public class MainFrame extends JFrame implements Refresh {
         setIconImage(Style.ICON_MAIN.getImage());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new GridBagLayout());
+
+        mb = new MainMenu(this);
+        setJMenuBar(mb);
 
         constraints = new GridBagConstraints();
 
@@ -40,6 +45,7 @@ public class MainFrame extends JFrame implements Refresh {
     @Override
     public void refresh() {
         SwingUtilities.updateComponentTreeUI(this); //перересовка Фрейма
+        mb.refresh();
         pack();
     }
 }

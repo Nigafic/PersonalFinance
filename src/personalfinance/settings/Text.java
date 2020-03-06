@@ -66,6 +66,26 @@ final public class Text {
         data.put("YES","Да");
         data.put("NO","Нет");
 
+        data.put("MENU_FILE_NEW","Новый");
+        data.put("MENU_FILE_OPEN","Открыть");
+        data.put("MENU_FILE_SAVE","Сохранить");
+        data.put("MENU_FILE_UPDATE_CURRENCIES","Обновить курсы валют");
+        data.put("MENU_FILE_EXIT","Выход");
+
+        data.put("MENU_EDIT_ADD","Добавить");
+        data.put("MENU_EDIT_EDIT","Изменить");
+        data.put("MENU_EDIT_DELETE","Удалить");
+
+        data.put("MENU_VIEW_OVERVIEW","Обзор");
+        data.put("MENU_VIEW_ARTICLES","Статьи");
+        data.put("MENU_VIEW_ACCOUNTS","Счета");
+        data.put("MENU_VIEW_CURRENCIES","Валюты");
+        data.put("MENU_VIEW_STATISTICS","Статистика");
+        data.put("MENU_VIEW_TRANSACTIONS","Транзакции");
+        data.put("MENU_VIEW_TRANSFERS","Переводы");
+
+        data.put("MENU_HELP_ABOUT","О программе");
+
     }
 
 }
