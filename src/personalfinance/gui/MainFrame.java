@@ -29,6 +29,7 @@ public class MainFrame extends JFrame implements Refresh {
         constraints.gridy = 0;
         constraints.gridwidth = 2;
 
+//        add(new MainButton("Button", Style.ICON_MAIN,null, "JJJJ" ));
         //add toolbar
 
         constraints.gridy = 1;
