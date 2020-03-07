@@ -84,6 +84,15 @@ final public class Text {
         data.put("MENU_VIEW_TRANSACTIONS","Транзакции");
         data.put("MENU_VIEW_TRANSFERS","Переводы");
 
+
+        data.put("TOOLBAR_OVERVIEW", "Обзор");
+        data.put("TOOLBAR_ACCOUNTS", "Счета");
+        data.put("TOOLBAR_ARTICLES", "Статьи");
+        data.put("TOOLBAR_TRANSACTIONS", "Транзакции");
+        data.put("TOOLBAR_TRANSFERS", "Переводы");
+        data.put("TOOLBAR_CURRENCIES", "Валюты");
+        data.put("TOOLBAR_STATISTICS", "Статистика");
+
         data.put("MENU_HELP_ABOUT","О программе");
 
     }

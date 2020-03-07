@@ -1,6 +1,7 @@
 package personalfinance.gui;
 
 import personalfinance.gui.menu.MainMenu;
+import personalfinance.gui.toolbar.MainToolbar;
 import personalfinance.settings.Style;
 import personalfinance.settings.Text;
 
@@ -11,6 +12,7 @@ public class MainFrame extends JFrame implements Refresh {
 
     private GridBagConstraints constraints;
     private final MainMenu mb;
+    private final MainToolbar toolbar;
 
     public MainFrame() {
 
@@ -29,8 +31,11 @@ public class MainFrame extends JFrame implements Refresh {
         constraints.gridy = 0;
         constraints.gridwidth = 2;
 
-//        add(new MainButton("Button", Style.ICON_MAIN,null, "JJJJ" ));
+
+        //add(new MainButton("Button", Style.ICON_MAIN,null, "JJJJ" ));
         //add toolbar
+        toolbar = new MainToolbar();
+        add(toolbar, constraints);
 
         constraints.gridy = 1;
         constraints.gridwidth = 1;
