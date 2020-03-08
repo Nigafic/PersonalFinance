@@ -14,6 +14,7 @@ public class Style {
     public static final Font FONT_MAIN_BUTTON = new Font("Roboto-Light", Font.BOLD, 14);
 
     public static final EmptyBorder BORDER_MAIN_TOOLBAR = new EmptyBorder(10,10,10,10);
+    public static final EmptyBorder BORDER_FUNCTIONS_TOOLBAR = new EmptyBorder(5,5,5,5);
     public static final EmptyBorder BORDER_PANEL = new EmptyBorder(10, 10, 10, 10);
 
     public static final ImageIcon ICON_MENU_FILE = new ImageIcon("images/menu_file.png");
@@ -49,6 +50,10 @@ public class Style {
     public static final ImageIcon ICON_MENU_VIEW_STATISTICS = new ImageIcon("images/menu_view_statistics.png");
     public static final ImageIcon ICON_MENU_VIEW_TRANSACTIONS = new ImageIcon("images/menu_view_transactions.png");
     public static final ImageIcon ICON_MENU_VIEW_TRANSFERS = new ImageIcon("images/menu_view_transfers.png");
+
+    public static final ImageIcon ICON_ADD = new ImageIcon("images/add.png");
+    public static final ImageIcon ICON_EDIT = new ImageIcon("images/edit.png");
+    public static final ImageIcon ICON_DELETE = new ImageIcon("images/delete.png");
 
     public static final ImageIcon ICON_MENU_HELP_ABOUT = new ImageIcon("images/menu_help_about.png");
 }
