@@ -41,6 +41,8 @@ public class MainFrame extends JFrame implements Refresh {
         constraints.gridy = 1;
         constraints.gridwidth = 1;
         constraints.anchor = GridBagConstraints.NORTH;
+
+        add(new MainDatePicker().getDatePicker(), constraints);
         //add leftpanel
 
         //add(new FunctionsToolbar(), constraints);

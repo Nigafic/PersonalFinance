@@ -56,4 +56,5 @@ public class Style {
     public static final ImageIcon ICON_DELETE = new ImageIcon("images/delete.png");
 
     public static final ImageIcon ICON_MENU_HELP_ABOUT = new ImageIcon("images/menu_help_about.png");
+    public static final ImageIcon ICON_DATE = new ImageIcon("images/date.png");
 }

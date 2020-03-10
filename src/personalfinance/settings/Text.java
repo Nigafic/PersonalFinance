@@ -100,6 +100,8 @@ final public class Text {
         data.put("DELETE", "Удалить");
         data.put("CANCEL", "Отмена");
 
+        data.put("TODAY", "Сегодня");
+
     }
 
 }
