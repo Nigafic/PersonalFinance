@@ -102,6 +102,24 @@ final public class Text {
 
         data.put("TODAY", "Сегодня");
 
+        data.put("FC_HOME", "Домашняя директория");
+        data.put("FC_OPEN", "Открыть");
+        data.put("FC_SAVE", "Сохранить");
+        data.put("FC_CANCEL", "Отмена");
+        data.put("FC_LOOK", "Папка:");
+        data.put("FC_NAME_FILE", "Имя файла:");
+        data.put("FC_TYPE_FILE", "Тип файла:");
+        data.put("FC_UP", "Вверх");
+        data.put("FC_NEW_DIRECTORY", "Новая папка");
+        data.put("FC_LIST", "Список");
+        data.put("FC_TABLE", "Таблица");
+        data.put("FC_NAME", "Имя");
+        data.put("FC_SIZE", "Размер");
+        data.put("FC_TYPE", "Тип");
+        data.put("FC_DATE", "Дата");
+        data.put("FC_ATTR", "Атрибуты");
+        data.put("FC_ALL_FILTER", "Все файлы");
+
     }
 
 }

@@ -18,6 +18,10 @@ public class MainFrame extends JFrame implements Refresh {
     public MainFrame() {
 
         super(Text.get("PROGRAMM_NAME"));
+
+        MainFileChooser mfc = new MainFileChooser(this);
+        System.out.println(mfc.save());
+
         setResizable(false);
         setIconImage(Style.ICON_MAIN.getImage());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -42,7 +46,7 @@ public class MainFrame extends JFrame implements Refresh {
         constraints.gridwidth = 1;
         constraints.anchor = GridBagConstraints.NORTH;
 
-        add(new MainDatePicker().getDatePicker(), constraints);
+        //add(new MainDatePicker().getDatePicker(), constraints);
         //add leftpanel
 
         //add(new FunctionsToolbar(), constraints);
