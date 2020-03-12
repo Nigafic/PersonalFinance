@@ -120,6 +120,8 @@ final public class Text {
         data.put("FC_ATTR", "Атрибуты");
         data.put("FC_ALL_FILTER", "Все файлы");
 
+        data.put("ERROR", "Ошибка");
+
     }
 
 }

@@ -1,5 +1,6 @@
 package personalfinance.gui;
 
+import personalfinance.gui.dialog.ErrorDialog;
 import personalfinance.gui.menu.MainMenu;
 import personalfinance.gui.toolbar.FunctionsToolbar;
 import personalfinance.gui.toolbar.MainToolbar;
@@ -19,8 +20,7 @@ public class MainFrame extends JFrame implements Refresh {
 
         super(Text.get("PROGRAMM_NAME"));
 
-        MainFileChooser mfc = new MainFileChooser(this);
-        System.out.println(mfc.save());
+        ErrorDialog.show(this, "Bid error!");
 
         setResizable(false);
         setIconImage(Style.ICON_MAIN.getImage());
