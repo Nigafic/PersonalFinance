@@ -44,6 +44,8 @@ public class Style {
 
     public static final ImageIcon ICON_MENU_VIEW_OVERVIEW = new ImageIcon("images/menu_view_overview.png");
 
+    public static final ImageIcon ICON_MENU_HELP_ABOUT = new ImageIcon("images/menu_help_about.png");
+
     public static final ImageIcon ICON_MENU_VIEW_ARTICLES = new ImageIcon("images/menu_view_articles.png");
     public static final ImageIcon ICON_MENU_VIEW_ACCOUNTS = new ImageIcon("images/menu_view_accounts.png");
     public static final ImageIcon ICON_MENU_VIEW_CURRENCIES = new ImageIcon("images/menu_view_currencies.png");
@@ -55,6 +57,6 @@ public class Style {
     public static final ImageIcon ICON_EDIT = new ImageIcon("images/edit.png");
     public static final ImageIcon ICON_DELETE = new ImageIcon("images/delete.png");
 
-    public static final ImageIcon ICON_MENU_HELP_ABOUT = new ImageIcon("images/menu_help_about.png");
+    public static final ImageIcon ICON_ABOUT = new ImageIcon("images/menu_help_about.png");
     public static final ImageIcon ICON_DATE = new ImageIcon("images/date.png");
 }

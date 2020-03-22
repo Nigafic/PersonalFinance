@@ -1,5 +1,6 @@
 package personalfinance.settings;
 
+import java.util.Calendar;
 import java.util.HashMap;
 
 final public class Text {
@@ -121,6 +122,14 @@ final public class Text {
         data.put("FC_ALL_FILTER", "Все файлы");
 
         data.put("ERROR", "Ошибка");
+        data.put("DIALOG_ABOUT_TITLE","О программе");
+        data.put("ABOUT", "<body style='font-size: 120%; text-align: center; width: 350px'>" +
+                "<h1>Домашняя бухгалтерия</h1><p><img src='file:images/main.png'></p>" +
+                "<p>Данная прогрфмма БлаБлаБла " +
+                "<br/>\"Create project in Java\"" +
+                "<br/> <a style = 'font-weight: bold;' href = 'https://github.com/Nigafic/PersonalFinance'>https://github.com/Nigafic/PersonalFinance</a></p>" +
+                "<p>Copyright"+ Calendar.getInstance().get(Calendar.YEAR)+"</p>" +
+                "</body>");
 
     }
 

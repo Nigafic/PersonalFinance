@@ -1,5 +1,6 @@
 package personalfinance.gui;
 
+import personalfinance.gui.dialog.AboutDialog;
 import personalfinance.gui.dialog.ConfirmDialog;
 import personalfinance.gui.dialog.ErrorDialog;
 import personalfinance.gui.menu.MainMenu;
@@ -21,9 +22,8 @@ public class MainFrame extends JFrame implements Refresh {
 
         super(Text.get("PROGRAMM_NAME"));
 
-
-
-        //ConfirmDialog.show(this, "Вы уверены ?" , "Подтверждение удаления");
+        new AboutDialog().setVisible(true);
+        //System.out.println(ConfirmDialog.show(this, "Вы уверены ?" , "Подтверждение удаления"));
 
         setResizable(false);
         setIconImage(Style.ICON_MAIN.getImage());
