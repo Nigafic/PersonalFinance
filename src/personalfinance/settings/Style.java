@@ -4,6 +4,7 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class Style {
 
@@ -12,10 +13,12 @@ public class Style {
 
     public static final Font FONT_BUTTON_TOOLBAR = new Font("Roboto-Light", Font.BOLD, 14);
     public static final Font FONT_MAIN_BUTTON = new Font("Roboto-Light", Font.BOLD, 14);
+    public static final Font FONT_DIALOG_LABEL = new Font("Roboto-Light", Font.BOLD, 12);;
 
     public static final EmptyBorder BORDER_MAIN_TOOLBAR = new EmptyBorder(10,10,10,10);
     public static final EmptyBorder BORDER_FUNCTIONS_TOOLBAR = new EmptyBorder(5,5,5,5);
     public static final EmptyBorder BORDER_PANEL = new EmptyBorder(10, 10, 10, 10);
+    public static final EmptyBorder BORDER_DIALOG = new EmptyBorder(10,10,10,10);;
 
     public static final ImageIcon ICON_MENU_FILE = new ImageIcon("images/menu_file.png");
     public static final ImageIcon ICON_MENU_EDIT = new ImageIcon("images/menu_edit.png");
@@ -23,7 +26,7 @@ public class Style {
     public static final ImageIcon ICON_MENU_SETTINGS = new ImageIcon("images/menu_settings.png");;
     public static final ImageIcon ICON_MENU_HELP = new ImageIcon("images/menu_help.png");
 
-    public static final ImageIcon ICON_MAIN = new ImageIcon("images/main.png");
+
     public static final ImageIcon ICON_TOOLBAR_OVERVIEW = new ImageIcon("images/overview.png");
     public static final ImageIcon ICON_TOOLBAR_ACCOUNTS = new ImageIcon("images/accounts.png");
     public static final ImageIcon ICON_TOOLBAR_ARTICLES = new ImageIcon("images/articles.png");
@@ -56,7 +59,14 @@ public class Style {
     public static final ImageIcon ICON_ADD = new ImageIcon("images/add.png");
     public static final ImageIcon ICON_EDIT = new ImageIcon("images/edit.png");
     public static final ImageIcon ICON_DELETE = new ImageIcon("images/delete.png");
+    public static final ImageIcon ICON_MAIN = new ImageIcon("images/main.png");
+    public static final ImageIcon ICON_CANCEL = new ImageIcon("image/cancel.png");
 
     public static final ImageIcon ICON_ABOUT = new ImageIcon("images/menu_help_about.png");
     public static final ImageIcon ICON_DATE = new ImageIcon("images/date.png");
+    public static final ImageIcon ICON_OK = new ImageIcon("image/ok.png");
+
+    public static final Dimension DIMENSION_DIALOG_TESTIFIED_SIZE = new Dimension(200, 25);
+
+    public static final int PADDING_DIALOG = 10;
 }
