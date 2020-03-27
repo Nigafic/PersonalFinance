@@ -103,6 +103,11 @@ final public class Text {
 
         data.put("TODAY", "Сегодня");
 
+        data.put("LABEL_TITLE", "Название:");
+        data.put("LABEL_CURRENCY", "Валюта:");
+        data.put("LABEL_START_AMOUNT", "Начальный баланс:");
+
+
         data.put("FC_HOME", "Домашняя директория");
         data.put("FC_OPEN", "Открыть");
         data.put("FC_SAVE", "Сохранить");

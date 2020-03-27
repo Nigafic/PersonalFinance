@@ -62,10 +62,13 @@ public abstract class AddEditDialog extends JDialog {
 
     private void setDialog() {
         init();
-        if (isAdd()) setTitle(Text.get("ADD"));
-        else{
+        if (isAdd()) {
+            setTitle(Text.get("ADD"));
+            setIconImage(Style.ICON_ADD.getImage());
+        }else{
             setValues();
             setTitle(Text.get("EDIT"));
+            setIconImage(Style.ICON_EDIT.getImage());
         }
         getContentPane().removeAll();
         getContentPane().setLayout(new BoxLayout(getContentPane(),BoxLayout.Y_AXIS));
@@ -87,7 +90,7 @@ public abstract class AddEditDialog extends JDialog {
             if (component instanceof JDatePickerImpl){
                 if (values.containsValue(key)) ((UtilDateModel) ((JDatePickerImpl) component).getModel()).setValue((Date) values.get(key));
             }
-            //component.setAlignmentX(JComponent.LEFT_ALIGNMENT);
+            component.setAlignmentX(JComponent.LEFT_ALIGNMENT);
             add(label);
             add(Box.createVerticalStrut(Style.PADDING_DIALOG));
             add(component);
@@ -103,8 +106,9 @@ public abstract class AddEditDialog extends JDialog {
         MainButton cancel = new MainButton(Text.get("CANCEL"), Style.ICON_CANCEL, null, HandlerCode.CANCEL);
         JPanel panelButtons = new JPanel();
         panelButtons.setLayout(new BorderLayout());
+        panelButtons.setAlignmentX(JPanel.LEFT_ALIGNMENT);
         panelButtons.add(ok, BorderLayout.WEST);
-
+        panelButtons.add(Box.createRigidArea(Style.DIMENSION_DIALOG_PADDING_BUTTON), BorderLayout.CENTER);
         panelButtons.add(cancel, BorderLayout.EAST);
         add(panelButtons);
         pack();
